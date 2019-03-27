@@ -14,12 +14,14 @@ protocol HTTPEndpoint {
 }
 
 struct Request {}
+struct Response {}
 
 protocol HTTPRequest: Codable {
     var url: String { get }
     var endpoint: HTTPEndpoint { get }
     var headers: HTTPHeaders? { get }
     var body: [String: Any] { get }
+    var page: Int { get set }
 }
 
 extension HTTPRequest {
@@ -30,6 +32,8 @@ extension HTTPRequest {
     }
     
     var headers: HTTPHeaders? { return [:] }
+    
+    var page: Int { return 0 }
     
     var debugDescription: String {
         

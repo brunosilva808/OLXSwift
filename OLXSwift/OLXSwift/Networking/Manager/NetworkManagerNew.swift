@@ -3,7 +3,7 @@ import Foundation
 struct NetworkManagerNew {
     var router = RouterNew()
     
-    func response(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<String>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
+    func response(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<Response.Data>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
         
         router.request(with: request) { (data, response, error) in
             if error != nil {
@@ -17,10 +17,10 @@ struct NetworkManagerNew {
                 case .success:
                     guard let data = data else { return }
 
-                    if let string = String(data: data, encoding: String.Encoding.utf8) {
-                        onSuccess(string)
+                    if let result = try? JSONDecoder().decode(Response.Data.self, from: data) {
+                        onSuccess(result)
                     } else {
-                        onError("")
+                        onError(NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let failure):
                     onError(failure)
