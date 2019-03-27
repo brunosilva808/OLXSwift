@@ -5,12 +5,12 @@ enum NetworkEnvironment {
 }
 
 public enum API: HTTPEndpoint {
-    case videos
+    case videos(page: Int)
     
     var info: EndpointInfo {
         switch self {
-        case .videos:
-            return (.get, "videos")
+        case .videos(let page):
+            return (.get, "videos?page=\(page)")
         }
     }
 }

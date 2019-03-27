@@ -8,7 +8,7 @@ class RouterNew {
                                        cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                        timeoutInterval: APIConstant.Value.timeoutInterval)
         customRequest.httpMethod = request.endpoint.info.method.rawValue
-        self.addURLQueryItems(request: &customRequest, page: request.page)
+        self.addURLQueryItems(request: &customRequest)
         
         if !request.body.isEmpty {
             do {
@@ -37,18 +37,13 @@ class RouterNew {
         }
     }
     
-    func addURLQueryItems(request: inout URLRequest, page: Int? = 0) {
-        var queryItems = [URLQueryItem(name: HeaderConstant.type.token,
+    func addURLQueryItems(request: inout URLRequest) {
+        let queryItems = [URLQueryItem(name: HeaderConstant.type.token,
                                        value: HeaderConstant.value.token)]
-        
-        if page != 0 {
-            queryItems.append(URLQueryItem(name: HeaderConstant.type.page,
-                                           value: "\(page!)"))
-        }
         
         if let urlString = request.url?.absoluteString {
             var urlComps = URLComponents(string: urlString)
-            urlComps?.queryItems = queryItems
+            urlComps?.queryItems?.append(contentsOf: queryItems)
             request.url = urlComps?.url
         }
     }

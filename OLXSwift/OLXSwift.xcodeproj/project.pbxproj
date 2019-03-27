@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23711F86224BE7E1008A1966 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F84224BE7E1008A1966 /* VideoCell.swift */; };
+		23711F87224BE7E1008A1966 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711F85224BE7E1008A1966 /* VideoCell.xib */; };
 		23DBE2F5224B8B3D00405F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */; };
 		23DBE2F7224B8B3D00405F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F6224B8B3D00405F12 /* ViewController.swift */; };
 		23DBE2FA224B8B3D00405F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23DBE2F8224B8B3D00405F12 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23711F84224BE7E1008A1966 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		23711F85224BE7E1008A1966 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		23DBE2F1224B8B3D00405F12 /* OLXSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLXSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23DBE2F6224B8B3D00405F12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23711F88224BE7E5008A1966 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				23711F84224BE7E1008A1966 /* VideoCell.swift */,
+				23711F85224BE7E1008A1966 /* VideoCell.xib */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		23DBE2E8224B8B3D00405F12 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				23DBE2F6224B8B3D00405F12 /* ViewController.swift */,
+				23711F88224BE7E5008A1966 /* Video */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23DBE2FF224B8B3F00405F12 /* LaunchScreen.storyboard in Resources */,
+				23711F87224BE7E1008A1966 /* VideoCell.xib in Resources */,
 				23DBE2FC224B8B3F00405F12 /* Assets.xcassets in Resources */,
 				23DBE2FA224B8B3D00405F12 /* Main.storyboard in Resources */,
 			);
@@ -302,6 +317,7 @@
 				23DBE31D224B9BDE00405F12 /* NetworkManagerNew.swift in Sources */,
 				23DBE31F224B9BDE00405F12 /* Request+Videos.swift in Sources */,
 				23DBE2F7224B8B3D00405F12 /* ViewController.swift in Sources */,
+				23711F86224BE7E1008A1966 /* VideoCell.swift in Sources */,
 				23DBE339224B9C1800405F12 /* UITableView+Extensions.swift in Sources */,
 				23DBE325224B9BDE00405F12 /* Router.swift in Sources */,
 				23DBE338224B9C1800405F12 /* UICollectionView+Extension.swift in Sources */,
