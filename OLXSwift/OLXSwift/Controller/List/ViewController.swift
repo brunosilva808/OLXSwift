@@ -72,4 +72,10 @@ extension ViewController {
             self.getResources()
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        detailViewController.resource = self.array[indexPath.row]
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
