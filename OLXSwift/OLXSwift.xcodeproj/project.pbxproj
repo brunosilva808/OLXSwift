@@ -12,6 +12,9 @@
 		23711F87224BE7E1008A1966 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711F85224BE7E1008A1966 /* VideoCell.xib */; };
 		23711F8B224CE6B9008A1966 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F89224CE6B9008A1966 /* DetailViewController.swift */; };
 		23711F8C224CE6B9008A1966 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711F8A224CE6B9008A1966 /* DetailViewController.xib */; };
+		23711FA3224D34F6008A1966 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FA0224D34F5008A1966 /* PlayerView.swift */; };
+		23711FA5224D34F6008A1966 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711FA2224D34F5008A1966 /* PlayerView.xib */; };
+		23711FA9224D3A39008A1966 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FA8224D3A39008A1966 /* UIViewController+NavigationBar.swift */; };
 		23DBE2F5224B8B3D00405F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */; };
 		23DBE2F7224B8B3D00405F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F6224B8B3D00405F12 /* ViewController.swift */; };
 		23DBE2FA224B8B3D00405F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23DBE2F8224B8B3D00405F12 /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 		23711F85224BE7E1008A1966 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		23711F89224CE6B9008A1966 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		23711F8A224CE6B9008A1966 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		23711FA0224D34F5008A1966 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		23711FA2224D34F5008A1966 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		23711FA8224D3A39008A1966 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		23DBE2F1224B8B3D00405F12 /* OLXSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLXSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23DBE2F6224B8B3D00405F12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 			children = (
 				23711F89224CE6B9008A1966 /* DetailViewController.swift */,
 				23711F8A224CE6B9008A1966 /* DetailViewController.xib */,
+				23711F9F224D34F5008A1966 /* Player */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -115,6 +122,15 @@
 				23711F88224BE7E5008A1966 /* Video */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		23711F9F224D34F5008A1966 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				23711FA0224D34F5008A1966 /* PlayerView.swift */,
+				23711FA2224D34F5008A1966 /* PlayerView.xib */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		23DBE2E8224B8B3D00405F12 = {
@@ -246,6 +262,7 @@
 				23DBE32E224B9C1800405F12 /* UICollectionView+Extension.swift */,
 				23DBE32F224B9C1800405F12 /* UITableView+Extensions.swift */,
 				23DBE330224B9C1800405F12 /* ReusabelView.swift */,
+				23711FA8224D3A39008A1966 /* UIViewController+NavigationBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,6 +356,7 @@
 				23711F8C224CE6B9008A1966 /* DetailViewController.xib in Resources */,
 				23DBE2FC224B8B3F00405F12 /* Assets.xcassets in Resources */,
 				23DBE2FA224B8B3D00405F12 /* Main.storyboard in Resources */,
+				23711FA5224D34F6008A1966 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,11 +421,13 @@
 				23DBE31E224B9BDE00405F12 /* APIEndpoint.swift in Sources */,
 				23DBE322224B9BDE00405F12 /* NetworkRouter.swift in Sources */,
 				23DBE320224B9BDE00405F12 /* HTTPEndpoint.swift in Sources */,
+				23711FA3224D34F6008A1966 /* PlayerView.swift in Sources */,
 				23DBE336224B9C1800405F12 /* UIView+UINib.swift in Sources */,
 				23DBE31C224B9BDE00405F12 /* JSONParameterEncoder.swift in Sources */,
 				23DBE326224B9BDE00405F12 /* EndpointType.swift in Sources */,
 				23DBE33A224B9C1800405F12 /* ReusabelView.swift in Sources */,
 				23DBE31B224B9BDE00405F12 /* URLParameterEncoder.swift in Sources */,
+				23711FA9224D3A39008A1966 /* UIViewController+NavigationBar.swift in Sources */,
 				23DBE33F224B9C7900405F12 /* Configuration.swift in Sources */,
 				23DBE31A224B9BDE00405F12 /* ParameterEncoder.swift in Sources */,
 				23DBE335224B9C1800405F12 /* Utils.swift in Sources */,
