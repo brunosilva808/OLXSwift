@@ -76,11 +76,11 @@ class PlayerView: UIView {
     @IBAction func playStop(sender: UIButton){
         if ytPlayerView.playerState == .playing{
             ytPlayerView.stopVideo()
-            delegate?.playerStateChanged(state: .playing)
+            delegate?.playerStateChanged(state: .paused)
             sender.setImage(#imageLiteral(resourceName: "play-512"), for: .normal)
         }else{
             ytPlayerView.playVideo()
-            delegate?.playerStateChanged(state: .paused)
+            delegate?.playerStateChanged(state: .playing)
             sender.setImage(#imageLiteral(resourceName: "pause-512"), for: .normal)
         }
     }

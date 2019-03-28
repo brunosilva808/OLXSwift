@@ -4,6 +4,7 @@ import youtube_ios_player_helper_swift
 class DetailViewController: UIViewController {
 
     var resource: Response.Resource!
+    var delegate: PlayerDelegate?
     private var playerView: PlayerView = PlayerView.fromNib()
     @IBOutlet weak var topImageConstraint: NSLayoutConstraint!
     
@@ -19,6 +20,8 @@ class DetailViewController: UIViewController {
     func setupView() {
         self.title = self.resource.title
         self.view.backgroundColor = .black
+        self.view.backgroundColor = resource.watched ? .green : .red
+        
         self.imageView.loadImageUsingUrlString(urlString: self.resource.thumbnails.large.url)
     }
     
@@ -49,12 +52,15 @@ extension DetailViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
         return .portrait
     }
-    
 }
 
 extension DetailViewController: PlayerDelegate {
 
     func playerStateChanged(state: YTPlayerState) {
-        print(state)
+        if state == .playing {
+            self.resource.watched = true
+            self.view.backgroundColor = .green
+            self.delegate?.playerStateChanged(state: state)
+        }
     }
 }

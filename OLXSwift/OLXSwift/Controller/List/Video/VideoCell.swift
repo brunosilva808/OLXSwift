@@ -7,6 +7,7 @@ class VideoCell: UITableViewCell, ModelPresenterCell {
     var model: Response.Resource? {
         didSet {
             guard let model = self.model else { return }
+            self.backgroundColor = model.watched ? .green : .red
             self.titleLabel.text = model.title
         }
     }
