@@ -15,6 +15,7 @@
 		23711FA3224D34F6008A1966 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FA0224D34F5008A1966 /* PlayerView.swift */; };
 		23711FA5224D34F6008A1966 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711FA2224D34F5008A1966 /* PlayerView.xib */; };
 		23711FA9224D3A39008A1966 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FA8224D3A39008A1966 /* UIViewController+NavigationBar.swift */; };
+		23711FAB224D3C0B008A1966 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FAA224D3C09008A1966 /* PlayerDelegate.swift */; };
 		23DBE2F5224B8B3D00405F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */; };
 		23DBE2F7224B8B3D00405F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F6224B8B3D00405F12 /* ViewController.swift */; };
 		23DBE2FA224B8B3D00405F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23DBE2F8224B8B3D00405F12 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		23711FA0224D34F5008A1966 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		23711FA2224D34F5008A1966 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		23711FA8224D3A39008A1966 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		23711FAA224D3C09008A1966 /* PlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		23DBE2F1224B8B3D00405F12 /* OLXSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLXSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23DBE2F6224B8B3D00405F12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		23711F9F224D34F5008A1966 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				23711FAA224D3C09008A1966 /* PlayerDelegate.swift */,
 				23711FA0224D34F5008A1966 /* PlayerView.swift */,
 				23711FA2224D34F5008A1966 /* PlayerView.xib */,
 			);
@@ -428,6 +431,7 @@
 				23DBE33A224B9C1800405F12 /* ReusabelView.swift in Sources */,
 				23DBE31B224B9BDE00405F12 /* URLParameterEncoder.swift in Sources */,
 				23711FA9224D3A39008A1966 /* UIViewController+NavigationBar.swift in Sources */,
+				23711FAB224D3C0B008A1966 /* PlayerDelegate.swift in Sources */,
 				23DBE33F224B9C7900405F12 /* Configuration.swift in Sources */,
 				23DBE31A224B9BDE00405F12 /* ParameterEncoder.swift in Sources */,
 				23DBE335224B9C1800405F12 /* Utils.swift in Sources */,

@@ -9,7 +9,6 @@
 import UIKit
 import youtube_ios_player_helper_swift
 
-
 class PlayerView: UIView {
     var videoId: String = ""{
         didSet{
@@ -19,7 +18,6 @@ class PlayerView: UIView {
             
         }
     }
-    
     
     @IBOutlet weak var ytPlayerView: YTPlayerView!
     @IBOutlet weak var btnPlayPause: UIButton!
@@ -39,6 +37,7 @@ class PlayerView: UIView {
     @IBOutlet weak var controlsView: UIView!
     
     private var isFullScreen = false
+    var delegate: PlayerDelegate?
     
     private func loadVideo(){
         let playerVars:[String: Any] = [
@@ -77,10 +76,12 @@ class PlayerView: UIView {
     @IBAction func playStop(sender: UIButton){
         if ytPlayerView.playerState == .playing{
             ytPlayerView.stopVideo()
-            sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            delegate?.playerStateChanged(state: .playing)
+            sender.setImage(#imageLiteral(resourceName: "play-512"), for: .normal)
         }else{
             ytPlayerView.playVideo()
-            sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            delegate?.playerStateChanged(state: .paused)
+            sender.setImage(#imageLiteral(resourceName: "pause-512"), for: .normal)
         }
     }
     
@@ -140,7 +141,7 @@ class PlayerView: UIView {
     }
     
     @objc func updateTime(){
-         let currentTime = ytPlayerView.currentTime
+        let currentTime = ytPlayerView.currentTime
         let duration = Float( ytPlayerView.duration )
         
         let progress = currentTime / duration
@@ -167,8 +168,8 @@ class LandscapeViewController: UIViewController {
 
 extension PlayerView: YTPlayerViewDelegate{
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-//        playerView.playVideo()
-        btnPlayPause.setImage(#imageLiteral(resourceName: "pause-512"), for: .normal)
+        //        playerView.playVideo()
+        btnPlayPause.setImage(#imageLiteral(resourceName: "play-512"), for: .normal)
     }
     
     func playerView(_ playerView: YTPlayerView, didChangeTo quality: YTPlaybackQuality) {

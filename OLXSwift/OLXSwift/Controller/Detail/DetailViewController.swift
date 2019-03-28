@@ -38,6 +38,7 @@ class DetailViewController: UIViewController {
         
         self.topImageConstraint.constant = self.calculateTopDistance()
         playerView.frame = CGRect(x: 0, y: self.calculateTopDistance(), width: self.view.bounds.width, height: 240)
+        playerView.delegate = self
         playerView.autoresizingMask = .flexibleWidth
     }
 
@@ -49,4 +50,11 @@ extension DetailViewController {
         return .portrait
     }
     
+}
+
+extension DetailViewController: PlayerDelegate {
+
+    func playerStateChanged(state: YTPlayerState) {
+        print(state)
+    }
 }
