@@ -264,7 +264,6 @@
 				D83B59DAF9B6C7EF2F5900E5 /* Pods-OLXSwift.debug.xcconfig */,
 				2853C41FD35A4B7041D42FAB /* Pods-OLXSwift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

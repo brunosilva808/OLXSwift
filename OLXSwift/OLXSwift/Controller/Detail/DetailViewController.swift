@@ -1,37 +1,33 @@
 import UIKit
-import WebKit
+import youtube_ios_player_helper_swift
 
 class DetailViewController: UIViewController {
 
     var resource: Response.Resource!
-    
+
+    @IBOutlet private weak var playerView: YTPlayerView!
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet weak var webview: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = self.resource.title
-        self.imageView.loadImageUsingUrlString(urlString: self.resource.thumbnails.large.url)
+//        self.imageView.loadImageUsingUrlString(urlString: self.resource.thumbnails.large.url)
         self.loadWebView()
     }
-    
+
     func loadWebView() {
-        if let youtube = resource?.videoEmbed, let url = URL(string: "http:" + "\(youtube)") {
-            let request = URLRequest(url: url)
-            self.webview.load(request)
+        if  let youtubeId = resource?.videoEmbed.components(separatedBy: "/").last {
+            _ = playerView.load(videoId: youtubeId)
         }
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.videoEnded),
-            name: NSNotification.avp,
-            object: nil)
     }
 
-    @objc
-    func videoEnded() {
-        print("video ended")
-    }
+}
 
+extension DetailViewController {
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return .portrait
+    }
+    
 }
