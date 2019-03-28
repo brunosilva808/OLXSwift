@@ -66,3 +66,28 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+OLXSwift/OLXSwift.xcworkspace/contents.xcworkspacedata
+OLXSwift/OLXSwift.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+OLXSwift/Pods/Manifest.lock
+OLXSwift/Pods/Pods.xcodeproj/project.pbxproj
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift-acknowledgements.markdown
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift-acknowledgements.plist
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift-dummy.m
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift-frameworks.sh
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift-Info.plist
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift-umbrella.h
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift.debug.xcconfig
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift.modulemap
+OLXSwift/Pods/Target Support Files/Pods-OLXSwift/Pods-OLXSwift.release.xcconfig
+OLXSwift/Pods/Target Support Files/youtube-ios-player-helper-swift/ResourceBundle-youtube-ios-player-helper-swift-youtube-ios-player-helper-swift-Info.plist
+OLXSwift/Pods/Target Support Files/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift-dummy.m
+OLXSwift/Pods/Target Support Files/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift-Info.plist
+OLXSwift/Pods/Target Support Files/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift-prefix.pch
+OLXSwift/Pods/Target Support Files/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift-umbrella.h
+OLXSwift/Pods/Target Support Files/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift.modulemap
+OLXSwift/Pods/Target Support Files/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift.xcconfig
+OLXSwift/Pods/youtube-ios-player-helper-swift/LICENSE
+OLXSwift/Pods/youtube-ios-player-helper-swift/README.md
+OLXSwift/Pods/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift/Assets/YTPlayerView-iframe-player.html
+OLXSwift/Pods/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift/Assets/YTPlayerView-iframe-playerIPAD.html
+OLXSwift/Pods/youtube-ios-player-helper-swift/youtube-ios-player-helper-swift/Classes/YTPlayerView.swift
