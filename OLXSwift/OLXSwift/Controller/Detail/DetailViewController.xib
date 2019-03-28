@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="OLXSwift" customModuleProvider="target">
             <connections>
-                <outlet property="playerView" destination="17z-CH-Btz" id="SiJ-wi-lUx"/>
+                <outlet property="imageView" destination="SqA-4Q-D4f" id="gbL-LW-VOB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,20 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17z-CH-Btz" customClass="YTPlayerView" customModule="youtube_ios_player_helper_swift">
-                    <rect key="frame" x="0.0" y="20" width="375" height="211"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="17z-CH-Btz" secondAttribute="height" multiplier="16:9" id="NaN-7m-asC"/>
-                    </constraints>
-                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-4Q-D4f">
+                    <rect key="frame" x="0.0" y="20" width="375" height="160"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="17z-CH-Btz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4z6-jW-FNd"/>
-                <constraint firstItem="17z-CH-Btz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SBc-At-bwZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="17z-CH-Btz" secondAttribute="trailing" id="bgL-vA-cFG"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="141.67916041979012"/>
         </view>
