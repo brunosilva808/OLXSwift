@@ -7,7 +7,13 @@ class DetailViewController: UIViewController {
     var delegate: PlayerDelegate?
     private var playerView: PlayerView = PlayerView.fromNib()
     @IBOutlet weak var topImageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topLabelConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            self.containerView.backgroundColor = .clear
+        }
+    }
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
             self.descriptionLabel.text = resource.description
@@ -28,7 +34,6 @@ class DetailViewController: UIViewController {
     
     func setupView() {
         self.title = self.resource.title
-        self.view.backgroundColor = .black
         self.view.backgroundColor = resource.watched ? .green : .red
     }
     
@@ -44,10 +49,11 @@ class DetailViewController: UIViewController {
     }
     
     private func addPlayerView(){
-        self.view.addSubview(playerView)
+        let playerHeight: CGFloat = 240.0
+        self.containerView.addSubview(playerView)
         
-        self.topImageConstraint.constant = self.calculateTopDistance()
-        playerView.frame = CGRect(x: 0, y: self.calculateTopDistance(), width: self.view.bounds.width, height: 240)
+//        self.topImageConstraint.constant = 0
+        playerView.frame = CGRect(x: 0, y: 0, width: self.containerView.bounds.width, height: playerHeight)
         playerView.delegate = self
         playerView.autoresizingMask = .flexibleWidth
     }
@@ -66,7 +72,7 @@ extension DetailViewController: PlayerDelegate {
     func playerStateChanged(state: YTPlayerState) {
         if state == .playing {
             self.resource.watched = true
-            self.view.backgroundColor = .green
+            self.containerView.backgroundColor = .green
             self.delegate?.playerStateChanged(state: state)
         }
     }
