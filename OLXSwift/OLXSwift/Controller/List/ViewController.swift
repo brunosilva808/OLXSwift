@@ -17,6 +17,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .black
         self.setupTableView()
         self.setupSpinner()
         self.getResources()

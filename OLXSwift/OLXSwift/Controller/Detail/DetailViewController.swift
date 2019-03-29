@@ -72,7 +72,7 @@ extension DetailViewController: PlayerDelegate {
     func playerStateChanged(state: YTPlayerState) {
         if state == .playing {
             self.resource.watched = true
-            self.containerView.backgroundColor = .green
+            self.view.backgroundColor = .green
             self.delegate?.playerStateChanged(state: state)
         }
     }

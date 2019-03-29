@@ -17,8 +17,8 @@ class VideoCell: UITableViewCell, ModelPresenterCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.backgroundColor = .clear
         self.selectionStyle = .none
-        self.backgroundColor = .black
     }
     
     @IBAction func shareButtonPressed(_ sender: Any) {
