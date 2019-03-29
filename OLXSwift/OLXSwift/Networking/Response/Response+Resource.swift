@@ -2,14 +2,15 @@ import Foundation
 
 extension Response {
 
-    struct Data: Codable {
+    class Data: Codable {
         let message: String
         let resource: [Resource]
         let status, total: Int
     }
     
-    struct Resource: Codable {
+    class Resource: Codable {
         let id: Int
+        var watched: Bool = false
         let title, description, hash, videoEmbed: String
         let thumbnails: Thumbnails
         
@@ -20,11 +21,11 @@ extension Response {
         }
     }
     
-    struct Thumbnails: Codable {
+    class Thumbnails: Codable {
         let small, medium, large: Large
     }
     
-    struct Large: Codable {
+    class Large: Codable {
         let url: String
         let width, height: Int
     }

@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import youtube_ios_player_helper_swift
 
 class ViewController: UITableViewController {
 
     private var videosRequest = Request.Videos(page: 1)
     private var array: [Response.Resource] = []
+    private var rowSelected = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .black
         self.setupTableView()
         self.setupSpinner()
         self.getResources()
@@ -43,6 +46,9 @@ class ViewController: UITableViewController {
     }
     
     func setupTableView() {
+        self.tableView.estimatedRowHeight = 230
+        self.tableView.separatorStyle = .none
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.registerNib(for: VideoCell.self)
     }
@@ -76,6 +82,17 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
         detailViewController.resource = self.array[indexPath.row]
+        detailViewController.delegate = self
+        
+        self.rowSelected = indexPath.row
         self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+}
+
+extension ViewController: PlayerDelegate {
+
+    func playerStateChanged(state: YTPlayerState) {
+        self.tableView.reloadRows(at: [IndexPath(item: self.rowSelected, section: 0)], with: .none)
     }
 }
