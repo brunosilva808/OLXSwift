@@ -3,17 +3,22 @@ import UIKit
 class VideoCell: UITableViewCell, ModelPresenterCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
-
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    
     var model: Response.Resource? {
         didSet {
             guard let model = self.model else { return }
-            self.backgroundColor = model.watched ? .green : .red
             self.titleLabel.text = model.title
+            self.titleLabel.textColor = model.watched ? .green : .red
+            self.thumbnailImageView.loadImageUsingUrlString(urlString: model.thumbnails.large.url)
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.selectionStyle = .none
+        self.backgroundColor = .black
     }
     
     @IBAction func shareButtonPressed(_ sender: Any) {

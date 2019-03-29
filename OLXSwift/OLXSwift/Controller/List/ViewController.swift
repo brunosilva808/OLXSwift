@@ -45,6 +45,9 @@ class ViewController: UITableViewController {
     }
     
     func setupTableView() {
+        self.tableView.estimatedRowHeight = 230
+        self.tableView.separatorStyle = .none
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.registerNib(for: VideoCell.self)
     }
