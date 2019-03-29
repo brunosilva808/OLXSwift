@@ -20,16 +20,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ga-iv-rNk">
-                        <rect key="frame" x="16" y="11" width="288" height="21"/>
+                        <rect key="frame" x="16" y="11" width="212" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiY-e7-PLw">
+                        <rect key="frame" x="244" y="6.5" width="60" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="ovi-0A-WUa"/>
+                        </constraints>
+                        <state key="normal" title="Share"/>
+                        <connections>
+                            <action selector="shareButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vgA-Wb-pUH"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="7Ga-iv-rNk" secondAttribute="trailing" constant="16" id="BJN-VY-EDI"/>
+                    <constraint firstItem="oiY-e7-PLw" firstAttribute="centerY" secondItem="7Ga-iv-rNk" secondAttribute="centerY" id="KdM-vn-hhS"/>
                     <constraint firstAttribute="bottom" secondItem="7Ga-iv-rNk" secondAttribute="bottom" constant="11.5" id="Paq-ho-rOP"/>
+                    <constraint firstItem="oiY-e7-PLw" firstAttribute="leading" secondItem="7Ga-iv-rNk" secondAttribute="trailing" constant="16" id="dGs-rd-kv4"/>
                     <constraint firstItem="7Ga-iv-rNk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="iT0-eB-DaC"/>
+                    <constraint firstAttribute="trailing" secondItem="oiY-e7-PLw" secondAttribute="trailing" constant="16" id="pYy-J6-NPi"/>
                     <constraint firstItem="7Ga-iv-rNk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qYv-lf-d7H"/>
                 </constraints>
             </tableViewCellContentView>

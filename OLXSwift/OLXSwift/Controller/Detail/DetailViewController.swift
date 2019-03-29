@@ -8,7 +8,16 @@ class DetailViewController: UIViewController {
     private var playerView: PlayerView = PlayerView.fromNib()
     @IBOutlet weak var topImageConstraint: NSLayoutConstraint!
     
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            self.descriptionLabel.text = resource.description
+        }
+    }
+    @IBOutlet private weak var imageView: UIImageView! {
+        didSet {
+            self.imageView.loadImageUsingUrlString(urlString: self.resource.thumbnails.large.url)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +30,6 @@ class DetailViewController: UIViewController {
         self.title = self.resource.title
         self.view.backgroundColor = .black
         self.view.backgroundColor = resource.watched ? .green : .red
-        
-        self.imageView.loadImageUsingUrlString(urlString: self.resource.thumbnails.large.url)
     }
     
     func loadWebView() {

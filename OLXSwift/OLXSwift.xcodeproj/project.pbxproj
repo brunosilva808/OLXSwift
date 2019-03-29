@@ -41,7 +41,7 @@
 		23DBE339224B9C1800405F12 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE32F224B9C1800405F12 /* UITableView+Extensions.swift */; };
 		23DBE33A224B9C1800405F12 /* ReusabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE330224B9C1800405F12 /* ReusabelView.swift */; };
 		23DBE33F224B9C7900405F12 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE33E224B9C7900405F12 /* Configuration.swift */; };
-		23DBE341224BBF0B00405F12 /* Response+Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE340224BBF0B00405F12 /* Response+Videos.swift */; };
+		23DBE341224BBF0B00405F12 /* Response+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE340224BBF0B00405F12 /* Response+Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +80,7 @@
 		23DBE32F224B9C1800405F12 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		23DBE330224B9C1800405F12 /* ReusabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusabelView.swift; sourceTree = "<group>"; };
 		23DBE33E224B9C7900405F12 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		23DBE340224BBF0B00405F12 /* Response+Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Videos.swift"; sourceTree = "<group>"; };
+		23DBE340224BBF0B00405F12 /* Response+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Resource.swift"; sourceTree = "<group>"; };
 		2853C41FD35A4B7041D42FAB /* Pods-OLXSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OLXSwift.release.xcconfig"; path = "Target Support Files/Pods-OLXSwift/Pods-OLXSwift.release.xcconfig"; sourceTree = "<group>"; };
 		739B55D19E2AF0D4B39AC99D /* Pods_OLXSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OLXSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83B59DAF9B6C7EF2F5900E5 /* Pods-OLXSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OLXSwift.debug.xcconfig"; path = "Target Support Files/Pods-OLXSwift/Pods-OLXSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 		23DBE342224BBF1B00405F12 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				23DBE340224BBF0B00405F12 /* Response+Videos.swift */,
+				23DBE340224BBF0B00405F12 /* Response+Resource.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -418,7 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23DBE323224B9BDE00405F12 /* HTTPTask.swift in Sources */,
-				23DBE341224BBF0B00405F12 /* Response+Videos.swift in Sources */,
+				23DBE341224BBF0B00405F12 /* Response+Resource.swift in Sources */,
 				23711F8B224CE6B9008A1966 /* DetailViewController.swift in Sources */,
 				23DBE337224B9C1800405F12 /* ImageView+Extensions.swift in Sources */,
 				23DBE31E224B9BDE00405F12 /* APIEndpoint.swift in Sources */,

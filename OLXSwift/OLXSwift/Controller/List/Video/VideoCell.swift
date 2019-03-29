@@ -16,4 +16,11 @@ class VideoCell: UITableViewCell, ModelPresenterCell {
         super.awakeFromNib()
     }
     
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        if let link = model?.videoEmbed {
+            let items = [URL(string: "http:" + link)]
+            let activityViewController = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+            self.window?.rootViewController?.present(activityViewController, animated: true, completion: nil)
+        }
+    }
 }

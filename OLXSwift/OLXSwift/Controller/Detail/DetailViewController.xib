@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="OLXSwift" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionLabel" destination="5Ew-o7-ODw" id="yYC-Jk-iea"/>
                 <outlet property="imageView" destination="SqA-4Q-D4f" id="gbL-LW-VOB"/>
                 <outlet property="topImageConstraint" destination="Ndf-k6-wsS" id="xLd-JU-HTF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,10 +29,19 @@
                         <constraint firstAttribute="height" constant="240" id="Q2k-Br-efe"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ew-o7-ODw">
+                    <rect key="frame" x="16" y="323" width="343" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="SqA-4Q-D4f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9Fo-Wq-I9g"/>
+                <constraint firstItem="5Ew-o7-ODw" firstAttribute="top" secondItem="SqA-4Q-D4f" secondAttribute="bottom" constant="19" id="BUB-W2-bGR"/>
+                <constraint firstItem="5Ew-o7-ODw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="G2a-10-N1f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Ew-o7-ODw" secondAttribute="trailing" constant="16" id="Get-ZN-gDe"/>
                 <constraint firstItem="SqA-4Q-D4f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Ndf-k6-wsS"/>
                 <constraint firstItem="SqA-4Q-D4f" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="d83-DI-kZ8"/>
             </constraints>
