@@ -24,22 +24,21 @@ class ViewController: UITableViewController {
     }
     
     func getResources() {
-        
-        self.tableView.tableFooterView?.isHidden = false
-        
+
         NetworkManagerNew().response(with: self.videosRequest, onSuccess: { [unowned self] (response) in
             
             guard response.resource.count != 0 else { return }
             
             self.videosRequest.page += 1
             self.array.append(contentsOf: response.resource)
+            Storage.store(self.array, to: .documents, as: File.resources)
+        }, onError: { (error) in
             
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }, onError: { (error) in }) {
-                
+            self.array = Storage.retrieve(File.resources, from: .documents, as: [Response.Resource].self)
+        }) {
+
             DispatchQueue.main.async { [unowned self] in
+                self.tableView.reloadData()
                 self.tableView.tableFooterView?.isHidden = true
             }
         }
