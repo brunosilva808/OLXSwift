@@ -4,7 +4,7 @@ import youtube_ios_player_helper_swift
 class DetailViewController: UIViewController {
 
     var resource: Response.Resource!
-    var delegate: PlayerDelegate?
+    weak var delegate: PlayerDelegate?
     private var playerView: PlayerView = PlayerView.fromNib()
     @IBOutlet weak var topImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var topLabelConstraint: NSLayoutConstraint!

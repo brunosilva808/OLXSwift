@@ -16,6 +16,8 @@
 		23711FA5224D34F6008A1966 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711FA2224D34F5008A1966 /* PlayerView.xib */; };
 		23711FA9224D3A39008A1966 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FA8224D3A39008A1966 /* UIViewController+NavigationBar.swift */; };
 		23711FAB224D3C0B008A1966 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FAA224D3C09008A1966 /* PlayerDelegate.swift */; };
+		23711FAE224E9B80008A1966 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711FAC224E9B80008A1966 /* PageViewController.swift */; };
+		23711FAF224E9B80008A1966 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711FAD224E9B80008A1966 /* PageViewController.xib */; };
 		23DBE2F5224B8B3D00405F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */; };
 		23DBE2F7224B8B3D00405F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE2F6224B8B3D00405F12 /* ViewController.swift */; };
 		23DBE2FA224B8B3D00405F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23DBE2F8224B8B3D00405F12 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		23711FA2224D34F5008A1966 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		23711FA8224D3A39008A1966 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		23711FAA224D3C09008A1966 /* PlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
+		23711FAC224E9B80008A1966 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		23711FAD224E9B80008A1966 /* PageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
 		23DBE2F1224B8B3D00405F12 /* OLXSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLXSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DBE2F4224B8B3D00405F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23DBE2F6224B8B3D00405F12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			children = (
 				23711F89224CE6B9008A1966 /* DetailViewController.swift */,
 				23711F8A224CE6B9008A1966 /* DetailViewController.xib */,
+				23711FAC224E9B80008A1966 /* PageViewController.swift */,
+				23711FAD224E9B80008A1966 /* PageViewController.xib */,
 				23711F9F224D34F5008A1966 /* Player */,
 			);
 			path = Detail;
@@ -356,6 +362,7 @@
 			files = (
 				23DBE2FF224B8B3F00405F12 /* LaunchScreen.storyboard in Resources */,
 				23711F87224BE7E1008A1966 /* VideoCell.xib in Resources */,
+				23711FAF224E9B80008A1966 /* PageViewController.xib in Resources */,
 				23711F8C224CE6B9008A1966 /* DetailViewController.xib in Resources */,
 				23DBE2FC224B8B3F00405F12 /* Assets.xcassets in Resources */,
 				23DBE2FA224B8B3D00405F12 /* Main.storyboard in Resources */,
@@ -439,6 +446,7 @@
 				23DBE31F224B9BDE00405F12 /* Request+Videos.swift in Sources */,
 				23DBE2F7224B8B3D00405F12 /* ViewController.swift in Sources */,
 				23711F86224BE7E1008A1966 /* VideoCell.swift in Sources */,
+				23711FAE224E9B80008A1966 /* PageViewController.swift in Sources */,
 				23DBE339224B9C1800405F12 /* UITableView+Extensions.swift in Sources */,
 				23DBE325224B9BDE00405F12 /* Router.swift in Sources */,
 				23DBE338224B9C1800405F12 /* UICollectionView+Extension.swift in Sources */,

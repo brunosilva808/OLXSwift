@@ -27,20 +27,20 @@ class ViewController: UITableViewController {
         
         self.tableView.tableFooterView?.isHidden = false
         
-        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { [weak self] (response) in
+        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { [unowned self] (response) in
             
             guard response.resource.count != 0 else { return }
             
-            self?.videosRequest.page += 1
-            self?.array.append(contentsOf: response.resource)
+            self.videosRequest.page += 1
+            self.array.append(contentsOf: response.resource)
             
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }, onError: { (error) in }) {
                 
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.tableFooterView?.isHidden = true
+            DispatchQueue.main.async { [unowned self] in
+                self.tableView.tableFooterView?.isHidden = true
             }
         }
     }
@@ -78,15 +78,26 @@ extension ViewController {
             self.getResources()
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController()
-        detailViewController.resource = self.array[indexPath.row]
-        detailViewController.delegate = self
+        let pageViewController = PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+//        detailViewController.resource = self.array[indexPath.row]
+//        detailViewController.delegate = self
         
+        pageViewController.array = self.array
+        pageViewController.rowSelected = indexPath.row
         self.rowSelected = indexPath.row
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        self.navigationController?.pushViewController(pageViewController, animated: true)
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let detailViewController = DetailViewController()
+//        detailViewController.resource = self.array[indexPath.row]
+//        detailViewController.delegate = self
+//
+//        self.rowSelected = indexPath.row
+//        self.navigationController?.pushViewController(detailViewController, animated: true)
+//    }
     
 }
 
