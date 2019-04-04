@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		044ECFBA246FCF8287B0DD0F /* Pods_OLXSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739B55D19E2AF0D4B39AC99D /* Pods_OLXSwift.framework */; };
 		2358A11F2255FF2E0036D2D5 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2358A11E2255FF2E0036D2D5 /* Storage.swift */; };
+		2358A1292256040B0036D2D5 /* OLXSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2358A1282256040B0036D2D5 /* OLXSwiftTests.swift */; };
 		23711F86224BE7E1008A1966 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F84224BE7E1008A1966 /* VideoCell.swift */; };
 		23711F87224BE7E1008A1966 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711F85224BE7E1008A1966 /* VideoCell.xib */; };
 		23711F8B224CE6B9008A1966 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F89224CE6B9008A1966 /* DetailViewController.swift */; };
@@ -47,8 +48,21 @@
 		23DBE341224BBF0B00405F12 /* Response+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE340224BBF0B00405F12 /* Response+Resource.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2358A12B2256040B0036D2D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23DBE2E9224B8B3D00405F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23DBE2F0224B8B3D00405F12;
+			remoteInfo = OLXSwift;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2358A11E2255FF2E0036D2D5 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		2358A1262256040B0036D2D5 /* OLXSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OLXSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2358A1282256040B0036D2D5 /* OLXSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLXSwiftTests.swift; sourceTree = "<group>"; };
+		2358A12A2256040B0036D2D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23711F84224BE7E1008A1966 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		23711F85224BE7E1008A1966 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		23711F89224CE6B9008A1966 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +107,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2358A1232256040B0036D2D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23DBE2EE224B8B3D00405F12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2358A1272256040B0036D2D5 /* OLXSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				2358A1282256040B0036D2D5 /* OLXSwiftTests.swift */,
+				2358A12A2256040B0036D2D5 /* Info.plist */,
+			);
+			path = OLXSwiftTests;
+			sourceTree = "<group>";
+		};
 		23711F88224BE7E5008A1966 /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				23DBE2F3224B8B3D00405F12 /* OLXSwift */,
+				2358A1272256040B0036D2D5 /* OLXSwiftTests */,
 				23DBE2F2224B8B3D00405F12 /* Products */,
 				5962CD096527582DEF3910B8 /* Pods */,
 				869E4DE45E98AD7C5852D362 /* Frameworks */,
@@ -158,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				23DBE2F1224B8B3D00405F12 /* OLXSwift.app */,
+				2358A1262256040B0036D2D5 /* OLXSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,6 +339,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2358A1252256040B0036D2D5 /* OLXSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2358A12F2256040E0036D2D5 /* Build configuration list for PBXNativeTarget "OLXSwiftTests" */;
+			buildPhases = (
+				2358A1222256040B0036D2D5 /* Sources */,
+				2358A1232256040B0036D2D5 /* Frameworks */,
+				2358A1242256040B0036D2D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2358A12C2256040B0036D2D5 /* PBXTargetDependency */,
+			);
+			name = OLXSwiftTests;
+			productName = OLXSwiftTests;
+			productReference = 2358A1262256040B0036D2D5 /* OLXSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		23DBE2F0224B8B3D00405F12 /* OLXSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23DBE303224B8B3F00405F12 /* Build configuration list for PBXNativeTarget "OLXSwift" */;
@@ -335,6 +385,10 @@
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				TargetAttributes = {
+					2358A1252256040B0036D2D5 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 23DBE2F0224B8B3D00405F12;
+					};
 					23DBE2F0224B8B3D00405F12 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -354,11 +408,19 @@
 			projectRoot = "";
 			targets = (
 				23DBE2F0224B8B3D00405F12 /* OLXSwift */,
+				2358A1252256040B0036D2D5 /* OLXSwiftTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2358A1242256040B0036D2D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23DBE2EF224B8B3D00405F12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +485,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2358A1222256040B0036D2D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2358A1292256040B0036D2D5 /* OLXSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23DBE2ED224B8B3D00405F12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +532,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2358A12C2256040B0036D2D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23DBE2F0224B8B3D00405F12 /* OLXSwift */;
+			targetProxy = 2358A12B2256040B0036D2D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		23DBE2F8224B8B3D00405F12 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -482,6 +560,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2358A12D2256040C0036D2D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
+				INFOPLIST_FILE = OLXSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pt.OLXSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLXSwift.app/OLXSwift";
+			};
+			name = Debug;
+		};
+		2358A12E2256040C0036D2D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
+				INFOPLIST_FILE = OLXSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pt.OLXSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OLXSwift.app/OLXSwift";
+			};
+			name = Release;
+		};
 		23DBE301224B8B3F00405F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -641,6 +759,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2358A12F2256040E0036D2D5 /* Build configuration list for PBXNativeTarget "OLXSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2358A12D2256040C0036D2D5 /* Debug */,
+				2358A12E2256040C0036D2D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		23DBE2EC224B8B3D00405F12 /* Build configuration list for PBXProject "OLXSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
