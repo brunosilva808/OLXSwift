@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		044ECFBA246FCF8287B0DD0F /* Pods_OLXSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739B55D19E2AF0D4B39AC99D /* Pods_OLXSwift.framework */; };
+		2358A11F2255FF2E0036D2D5 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2358A11E2255FF2E0036D2D5 /* Storage.swift */; };
 		23711F86224BE7E1008A1966 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F84224BE7E1008A1966 /* VideoCell.swift */; };
 		23711F87224BE7E1008A1966 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711F85224BE7E1008A1966 /* VideoCell.xib */; };
 		23711F8B224CE6B9008A1966 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F89224CE6B9008A1966 /* DetailViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2358A11E2255FF2E0036D2D5 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		23711F84224BE7E1008A1966 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		23711F85224BE7E1008A1966 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		23711F89224CE6B9008A1966 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				23DBE32A224B9C1800405F12 /* Utils.swift */,
 				23DBE33E224B9C7900405F12 /* Configuration.swift */,
+				2358A11E2255FF2E0036D2D5 /* Storage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				23DBE324224B9BDE00405F12 /* HTTPMethod.swift in Sources */,
 				23DBE321224B9BDE00405F12 /* APIConstant.swift in Sources */,
 				23DBE2F5224B8B3D00405F12 /* AppDelegate.swift in Sources */,
+				2358A11F2255FF2E0036D2D5 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
