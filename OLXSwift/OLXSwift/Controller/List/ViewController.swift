@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
     
     func getResources() {
 
-        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { [unowned self] (response) in
+        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { (response: Response.Data) in
             
             guard response.resource.count != 0 else { return }
             
@@ -42,6 +42,24 @@ class ViewController: UITableViewController {
                 self.tableView.tableFooterView?.isHidden = true
             }
         }
+        
+//        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { [unowned self] (response) in
+//
+//            guard response.resource.count != 0 else { return }
+//
+//            self.videosRequest.page += 1
+//            self.array.append(contentsOf: response.resource)
+//            Storage.store(self.array, to: .documents, as: File.resources)
+//        }, onError: { (error) in
+//
+//            self.array = Storage.retrieve(File.resources, from: .documents, as: [Response.Resource].self)
+//        }) {
+//
+////            DispatchQueue.main.async { [unowned self] in
+//                self.tableView.reloadData()
+//                self.tableView.tableFooterView?.isHidden = true
+////            }
+//        }
     }
     
     func setupTableView() {
