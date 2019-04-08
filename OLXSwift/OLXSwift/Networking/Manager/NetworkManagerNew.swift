@@ -10,8 +10,8 @@ struct NetworkManagerNew {
                 onError(error?.localizedDescription ?? NetworkResponse.failed.rawValue)
             }
             
-            if let response = response as? HTTPURLResponse {
-                let result = self.handleNetworkResponse(response)
+            if let originalResponse = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(originalResponse)
                 
                 switch result {
                 case .success:
@@ -23,7 +23,11 @@ struct NetworkManagerNew {
                         onError(NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let failure):
-                    onError(failure)
+                    if originalResponse.statusCode == 401 {
+                        onError(failure)
+                    } else {
+                        onError(failure)
+                    }
                 }
             }
             
@@ -38,9 +42,9 @@ struct NetworkManagerNew {
                 onError(error?.localizedDescription ?? NetworkResponse.failed.rawValue)
             }
 
-            if let response = response as? HTTPURLResponse {
-                let result = self.handleNetworkResponse(response)
-
+            if let originalResponse = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(originalResponse)
+                
                 switch result {
                 case .success:
                     guard let data = data else { return }
@@ -51,7 +55,15 @@ struct NetworkManagerNew {
                         onError(NetworkResponse.unableToDecode.rawValue)
                     }
                 case .failure(let failure):
-                    onError(failure)
+                    if originalResponse.statusCode == 401 {
+                        let wrappedRequestCallback = {
+                            NetworkManagerNew().response(with: request, onSuccess: onSuccess, onError: onError, onFinally: onFinally)
+                        }
+                        
+                        NetworkManagerNew.checkSpecificErrorStates(request: request, wrappedRequest: wrappedRequestCallback, onError: onError)
+                    } else {
+                        onError(failure)
+                    }
                 }
             }
             
@@ -59,31 +71,50 @@ struct NetworkManagerNew {
         }
     }
     
-}
-
-extension NetworkManagerNew {
-    func handleNetworkResponse(_ response: HTTPURLResponse) -> HTTPResult<String> {
-        switch response.statusCode {
-        case 200...299: return .success
-        case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)
-        case 501...599: return .failure(NetworkResponse.badRequest.rawValue)
-        case 600: return .failure(NetworkResponse.outdated.rawValue)
-        default: return .failure(NetworkResponse.failed.rawValue)
+    // This method needs to have an array of callbacks like in alamofire documentation because it has a bug
+    private static func checkSpecificErrorStates(request: HTTPRequest, wrappedRequest: @escaping SimpleCallback, onError: @escaping APIErrorCallback) {
+    
+        //Request.Login -> Replace with Request.RenewToken
+        guard !(request is Request.Login) else {
+//            NotificationManager.shared.notify(event: Config.Listener.sessionExpiredEvent, argument: true)
+            return
         }
+        
+        NetworkManagerNew().response(with: Request.Login(userName: "user", password: "pass"), onSuccess: { (response: Response.Resource) in
+            wrappedRequest()
+        }, onError: { (error) in
+            onError(error)
+        }) {}
+        
+//            if (WSManager.sharedInstance.token.refreshToken == nil) {
+//
+//                Service.sharedInstance.login(with: WSManager.sharedInstance.username, and: WSManager.sharedInstance.password, successBlock: {
+//                    if var request = request {
+//                        request.setValue(WSManager.sharedInstance.getApiToken(), forHTTPHeaderField: APIHeaders.authorizationKey)
+//                        repeatRequestCallback(request)
+//                    } else {
+//                        originalCallback()
+//                    }
+//                }) { (error) in
+//                    originalCallback()
+//                }
+//            } else {
+//                Service.sharedInstance.refreshToken(successBlock: {
+//                    if var request = request {
+//                        request.setValue(WSManager.sharedInstance.getApiToken(), forHTTPHeaderField: APIHeaders.authorizationKey)
+//                        repeatRequestCallback(request)
+//                    } else {
+//                        originalCallback()
+//                    }
+//                }, errorBlock: {_ in
+//                    WSManager.sharedInstance.logout(successBlock: {
+//                        // Show login screen
+//                        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+//                        appDelegate?.logout()
+//                    })
+//                    originalCallback()
+//                })
+//            }
     }
-}
-
-enum NetworkResponse: String {
-    case success
-    case authenticationError = "You need to be authenticated first."
-    case badRequest = "Bad request"
-    case outdated = "The url you requested is outdated."
-    case failed = "Network request failed."
-    case noData = "Response returned with no data to decode."
-    case unableToDecode = "We could not decode the response."
-}
-
-enum HTTPResult<String>{
-    case success
-    case failure(String)
+    
 }
