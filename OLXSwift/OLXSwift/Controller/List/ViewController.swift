@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
     
     func getResources() {
 
-        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { [unowned self] (response) in
+        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { (response: Response.Data) in
             
             guard response.resource.count != 0 else { return }
             
@@ -42,6 +42,7 @@ class ViewController: UITableViewController {
                 self.tableView.tableFooterView?.isHidden = true
             }
         }
+
     }
     
     func setupTableView() {

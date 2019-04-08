@@ -3,7 +3,35 @@ import Foundation
 struct NetworkManagerNew {
     var router = RouterNew()
     
-    func response(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<Response.Data>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
+    func response<T: Codable>(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<[T]>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
+        
+        router.request(with: request) { (data, response, error) in
+            if error != nil {
+                onError(error?.localizedDescription ?? NetworkResponse.failed.rawValue)
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                
+                switch result {
+                case .success:
+                    guard let data = data else { return }
+                    
+                    if let result = try? JSONDecoder().decode([T].self, from: data) {
+                        onSuccess(result)
+                    } else {
+                        onError(NetworkResponse.unableToDecode.rawValue)
+                    }
+                case .failure(let failure):
+                    onError(failure)
+                }
+            }
+            
+            onFinally()
+        }
+    }
+    
+    func response<T: Codable>(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<T>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
         
         router.request(with: request) { (data, response, error) in
             if error != nil {
@@ -17,7 +45,7 @@ struct NetworkManagerNew {
                 case .success:
                     guard let data = data else { return }
 
-                    if let result = try? JSONDecoder().decode(Response.Data.self, from: data) {
+                    if let result = try? JSONDecoder().decode(T.self, from: data) {
                         onSuccess(result)
                     } else {
                         onError(NetworkResponse.unableToDecode.rawValue)
@@ -26,7 +54,7 @@ struct NetworkManagerNew {
                     onError(failure)
                 }
             }
-
+            
             onFinally()
         }
     }
