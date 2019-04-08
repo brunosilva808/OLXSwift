@@ -33,7 +33,14 @@ extension HTTPRequest {
     
     var headers: HTTPHeaders? { return [:] }
     
-    var page: Int { return 0 }
+    var page: Int {
+        get {
+            return 0
+        }
+        set {
+            self.page = newValue
+        }
+    }
     
     var debugDescription: String {
         
