@@ -71,7 +71,7 @@ struct NetworkManagerNew {
         }
     }
     
-    // This method needs to have an array like in alamofire because it has a bug
+    // This method needs to have an array of callbacks like in alamofire documentation because it has a bug
     private static func checkSpecificErrorStates(request: HTTPRequest, wrappedRequest: @escaping SimpleCallback, onError: @escaping APIErrorCallback) {
     
         //Request.Login -> Replace with Request.RenewToken
