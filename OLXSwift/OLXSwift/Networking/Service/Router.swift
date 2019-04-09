@@ -1,6 +1,6 @@
 import Foundation
 
-class RouterNew {
+class Router {
     private var task: URLSessionTask?
 
     fileprivate func buildRequest(request: HTTPRequest, url: URL) throws -> URLRequest {

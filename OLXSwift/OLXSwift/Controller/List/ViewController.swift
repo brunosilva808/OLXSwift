@@ -25,16 +25,16 @@ class ViewController: UITableViewController {
     
     func getResources() {
 
-        NetworkManagerNew().response(with: self.videosRequest, onSuccess: { (response: Response.Data) in
+        NetworkManager().response(with: self.videosRequest, onSuccess: { [weak self] (response: Response.Data) in
             
             guard response.resource.count != 0 else { return }
             
-            self.videosRequest.page += 1
-            self.array.append(contentsOf: response.resource)
-            Storage.store(self.array, to: .documents, as: File.resources)
-        }, onError: { (error) in
+            self?.videosRequest.page += 1
+            self?.array.append(contentsOf: response.resource)
+            Storage.store(self?.array, to: .documents, as: File.resources)
+        }, onError: { [weak self] (error) in
             
-            self.array = Storage.retrieve(File.resources, from: .documents, as: [Response.Resource].self)
+            self?.array = Storage.retrieve(File.resources, from: .documents, as: [Response.Resource].self)
         }) {
 
             DispatchQueue.main.async { [unowned self] in
