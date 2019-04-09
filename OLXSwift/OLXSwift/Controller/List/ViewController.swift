@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
     private var videosRequest = Request.Videos(page: 1)
     private var array: [Response.Resource] = []
     private var rowSelected = 0
+    private var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class ViewController: UITableViewController {
     
     func getResources() {
 
-        NetworkManager().response(with: self.videosRequest, onSuccess: { [weak self] (response: Response.Data) in
+        self.networkManager.response(with: self.videosRequest, onSuccess: { [weak self] (response: Response.Data) in
             
             guard response.resource.count != 0 else { return }
             
