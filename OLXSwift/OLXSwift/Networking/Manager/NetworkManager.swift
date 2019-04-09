@@ -44,7 +44,7 @@ class NetworkManager {
     }
     
     func response<T: Codable>(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<T>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
-        
+
         router.request(with: request) { [weak self] (data, response, error) in
             if error != nil {
                 onError(error?.localizedDescription ?? NetworkResponse.failed.rawValue)

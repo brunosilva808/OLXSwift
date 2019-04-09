@@ -27,9 +27,8 @@ class Router {
     }
     
     func addURLQueryItems(request: inout URLRequest) {
-        //        let queryItems = [URLQueryItem(name: HeaderConstant.type.token,
-        //                                       value: HeaderConstant.value.token)]
-        let queryItems: [URLQueryItem] = []
+        let queryItems = [URLQueryItem(name: APIConstant.Parameter.token,
+                                       value: APIConstant.Value.token)]
         
         if let urlString = request.url?.absoluteString {
             var urlComps = URLComponents(string: urlString)
@@ -43,7 +42,7 @@ class Router {
         
         do {
             let customRequest = try self.buildRequest(request: request, url: url)
-            print(request.debugDescription)
+            print(customRequest.debugDescription)
             let session = URLSession.shared
             self.task = session.dataTask(with: customRequest, completionHandler: { (data, response, error) in
                 completion(data, response, error)

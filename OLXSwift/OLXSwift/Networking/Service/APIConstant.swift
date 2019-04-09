@@ -9,8 +9,9 @@ import Foundation
 
 enum APIConstant {
     
-    enum Header {
+    enum Parameter {
         static let contentType = "Content-Type"
+        static let token = "olx-token"
     }
     
 //    enum Parameter {
@@ -25,6 +26,7 @@ enum APIConstant {
         static let urlEncoded = "application/x-www-form-urlencoded; charset=utf-8"
         static let applicationJson = "application/json"
         static let timeoutInterval = 60.0
+        static let token = "96f58b5dd2b07b3b54e9d848f58edb3e87cd3a19"
 //        static let timeStamp = "1"
 //        static let limit = 20
 //        static var publicKey = "2b78d362481839c76e3df81e3b13d6e5"
