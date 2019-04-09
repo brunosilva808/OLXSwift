@@ -31,7 +31,7 @@ class NetworkManager {
                             NetworkManager().response(with: request, onSuccess: onSuccess, onError: onError, onFinally: onFinally)
                         }
                         
-                        self?.checkSpecificErrorStates(request: request, wrappedRequest: wrappedRequestCallback, onError: onError)
+                        self?.checkSpecificErrorStates(request: request, wrappedRequest: wrappedRequestCallback, onError: onError, error: error as! String)
                     } else {
                         onError(failure)
                     }
@@ -69,7 +69,7 @@ class NetworkManager {
                             NetworkManager().response(with: request, onSuccess: onSuccess, onError: onError, onFinally: onFinally)
                         }
                         
-                        self?.checkSpecificErrorStates(request: request, wrappedRequest: wrappedRequestCallback, onError: onError)
+                        self?.checkSpecificErrorStates(request: request, wrappedRequest: wrappedRequestCallback, onError: onError, error: error as! String)
                     } else {
                         onError(failure)
                     }
@@ -85,7 +85,7 @@ class NetworkManager {
     // TODO: This function was not tested
     // This method needs to have an array of callbacks like in alamofire documentation because it has a bug https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md
     // This method is called when httpCode = 401, it should be called for all codes
-    private func checkSpecificErrorStates(request: HTTPRequest, wrappedRequest: @escaping SimpleCallback, onError: @escaping APIErrorCallback) {
+    private func checkSpecificErrorStates(request: HTTPRequest, wrappedRequest: @escaping SimpleCallback, onError: @escaping APIErrorCallback, error: String) {
     
         lock.lock() ; defer { lock.unlock() }
         
@@ -113,6 +113,8 @@ class NetworkManager {
             }, onError: { (error) in
                 onError(error)
             }) {}
+        } else {
+            onError(error)
         }
     }
     
