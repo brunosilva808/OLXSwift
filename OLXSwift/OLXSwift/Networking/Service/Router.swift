@@ -2,7 +2,12 @@ import Foundation
 
 class RouterNew {
     private var task: URLSessionTask?
-
+    var authentication: Response.Authentication?
+    
+    func purge() {
+        self.authentication = nil
+    }
+    
     fileprivate func buildRequest(request: HTTPRequest, url: URL) throws -> URLRequest {
         var customRequest = URLRequest(url: url,
                                        cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
