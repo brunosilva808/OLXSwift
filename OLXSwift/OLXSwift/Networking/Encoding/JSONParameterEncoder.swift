@@ -12,9 +12,9 @@ public struct JSONParameterEncoder: ParameterEncoder {
         do {
             let jsonAsData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             urlRequest.httpBody = jsonAsData
-            if urlRequest.value(forHTTPHeaderField: HeaderConstant.type.contentType) == nil {
-                urlRequest.setValue(HeaderConstant.value.applicationJson,
-                                    forHTTPHeaderField: HeaderConstant.type.contentType)
+            if urlRequest.value(forHTTPHeaderField: APIConstant.Header.contentType) == nil {
+                urlRequest.setValue(APIConstant.Value.applicationJson,
+                                    forHTTPHeaderField: APIConstant.Header.contentType)
             }
         } catch  {
             throw NetworkError.encodingFailed

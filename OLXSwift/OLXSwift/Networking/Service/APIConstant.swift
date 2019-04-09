@@ -9,9 +9,9 @@ import Foundation
 
 enum APIConstant {
     
-//    enum Header {
-//        static let contentType = "Content-Type"
-//    }
+    enum Header {
+        static let contentType = "Content-Type"
+    }
     
 //    enum Parameter {
 //        static let timeStamp = "ts"
@@ -22,6 +22,8 @@ enum APIConstant {
 //    }
     
     enum Value {
+        static let urlEncoded = "application/x-www-form-urlencoded; charset=utf-8"
+        static let applicationJson = "application/json"
         static let timeoutInterval = 60.0
 //        static let timeStamp = "1"
 //        static let limit = 20

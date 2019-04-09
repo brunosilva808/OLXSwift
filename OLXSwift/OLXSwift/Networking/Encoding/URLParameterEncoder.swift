@@ -25,8 +25,8 @@ public struct URLParameterEncoder: ParameterEncoder {
             urlRequest.url = urlComponents.url
         }
         
-        if urlRequest.value(forHTTPHeaderField: HeaderConstant.type.contentType) == nil {
-            urlRequest.setValue(HeaderConstant.value.urlEncoded, forHTTPHeaderField: HeaderConstant.type.contentType)
+        if urlRequest.value(forHTTPHeaderField: APIConstant.Header.contentType) == nil {
+            urlRequest.setValue(APIConstant.Value.urlEncoded, forHTTPHeaderField: APIConstant.Header.contentType)
         }
     }
 }

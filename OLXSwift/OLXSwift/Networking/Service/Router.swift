@@ -26,6 +26,18 @@ class Router {
         return customRequest
     }
     
+    func addURLQueryItems(request: inout URLRequest) {
+        //        let queryItems = [URLQueryItem(name: HeaderConstant.type.token,
+        //                                       value: HeaderConstant.value.token)]
+        let queryItems: [URLQueryItem] = []
+        
+        if let urlString = request.url?.absoluteString {
+            var urlComps = URLComponents(string: urlString)
+            urlComps?.queryItems?.append(contentsOf: queryItems)
+            request.url = urlComps?.url
+        }
+    }
+    
     func request(with request: HTTPRequest, completion: @escaping NetworkRouterCompletion) {
         guard let url = URL(string: request.url) else { return }
         
@@ -39,17 +51,6 @@ class Router {
             self.task?.resume()
         } catch {
             completion(nil, nil, error)
-        }
-    }
-    
-    func addURLQueryItems(request: inout URLRequest) {
-        let queryItems = [URLQueryItem(name: HeaderConstant.type.token,
-                                       value: HeaderConstant.value.token)]
-        
-        if let urlString = request.url?.absoluteString {
-            var urlComps = URLComponents(string: urlString)
-            urlComps?.queryItems?.append(contentsOf: queryItems)
-            request.url = urlComps?.url
         }
     }
 
