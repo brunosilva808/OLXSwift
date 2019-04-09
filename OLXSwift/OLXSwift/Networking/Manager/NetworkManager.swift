@@ -104,6 +104,7 @@ class NetworkManager {
                 
                 // Saves token in... the authentication logic needs to be rethinked because it is not being used at the moment
                 self?.router.authentication = response
+                self?.isRefreshing = false
                 
                 wrappedRequest()
                 
