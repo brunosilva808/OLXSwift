@@ -92,9 +92,9 @@ class NetworkManager {
         //Request.Login -> Replace with Request.RenewToken
         if !(request is Request.Login) && self.isRefreshing {
             self.requestsToRetry.append(wrappedRequest)
-        }
-        
-        if !self.isRefreshing {
+        } else if (request is Request.Login) {
+            //logout -> Request.Login = 401
+        } else if !self.isRefreshing {
             self.isRefreshing = true
         
             // Instead of the Request.Login -> Replace with Request.RenewToken, check if RenewToken call should only be here??
