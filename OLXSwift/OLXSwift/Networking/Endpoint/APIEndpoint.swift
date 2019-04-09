@@ -1,9 +1,5 @@
 import Foundation
 
-enum NetworkEnvironment {
-    case production
-}
-
 public enum API: HTTPEndpoint {
     case login(username: String, password: String)
     case videos(page: Int)

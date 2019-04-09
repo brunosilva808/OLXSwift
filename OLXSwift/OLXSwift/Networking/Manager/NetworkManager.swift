@@ -96,10 +96,11 @@ class NetworkManager {
             self.isRefreshing = true
         
             // Instead of the Request.Login -> Replace with Request.RenewToken, check if RenewToken call should only be here??
-            NetworkManager().response(with: Request.Login(userName: "user", password: "pass"), onSuccess: { [weak self] (response: Response.Resource) in
+            NetworkManager().response(with: Request.Login(userName: "user", password: "pass"), onSuccess: { [weak self] (response: Response.Authentication) in
                 wrappedRequest()
                 
-                // Saves token in...
+                // Saves token in... the authentication logic needs to be rethinked because it is not being used at the moment
+                self?.router.authentication = response
                 
                 self?.requestsToRetry.forEach { $0() }
                 self?.requestsToRetry.removeAll()

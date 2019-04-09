@@ -12,6 +12,7 @@
 		2359E4B2225BA0010072DA5B /* Request+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359E4B1225BA0010072DA5B /* Request+Login.swift */; };
 		2359E4B4225BB3970072DA5B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359E4B3225BB3970072DA5B /* NetworkError.swift */; };
 		2359E4B6225CB1780072DA5B /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359E4B5225CB1780072DA5B /* APIConstant.swift */; };
+		2359E4B8225CB4100072DA5B /* Response+Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359E4B7225CB4100072DA5B /* Response+Authentication.swift */; };
 		23711F86224BE7E1008A1966 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F84224BE7E1008A1966 /* VideoCell.swift */; };
 		23711F87224BE7E1008A1966 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23711F85224BE7E1008A1966 /* VideoCell.xib */; };
 		23711F8B224CE6B9008A1966 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23711F89224CE6B9008A1966 /* DetailViewController.swift */; };
@@ -54,6 +55,7 @@
 		2359E4B1225BA0010072DA5B /* Request+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Login.swift"; sourceTree = "<group>"; };
 		2359E4B3225BB3970072DA5B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2359E4B5225CB1780072DA5B /* APIConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
+		2359E4B7225CB4100072DA5B /* Response+Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Authentication.swift"; sourceTree = "<group>"; };
 		23711F84224BE7E1008A1966 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		23711F85224BE7E1008A1966 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		23711F89224CE6B9008A1966 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				23DBE340224BBF0B00405F12 /* Response+Resource.swift */,
+				2359E4B7225CB4100072DA5B /* Response+Authentication.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				23DBE338224B9C1800405F12 /* UICollectionView+Extension.swift in Sources */,
 				23DBE324224B9BDE00405F12 /* HTTPMethod.swift in Sources */,
 				23DBE2F5224B8B3D00405F12 /* AppDelegate.swift in Sources */,
+				2359E4B8225CB4100072DA5B /* Response+Authentication.swift in Sources */,
 				2358A11F2255FF2E0036D2D5 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
