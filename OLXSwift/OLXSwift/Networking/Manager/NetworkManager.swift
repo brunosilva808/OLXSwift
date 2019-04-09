@@ -90,9 +90,8 @@ class NetworkManager {
         lock.lock() ; defer { lock.unlock() }
         
         //Request.Login -> Replace with Request.RenewToken
-        guard !(request is Request.Login) else {
+        if !(request is Request.Login) && self.isRefreshing {
             self.requestsToRetry.append(wrappedRequest)
-            return
         }
         
         if !self.isRefreshing {
