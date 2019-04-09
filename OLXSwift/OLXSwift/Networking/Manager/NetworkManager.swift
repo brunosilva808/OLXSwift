@@ -3,6 +3,7 @@ import Foundation
 class NetworkManager {
     private var router = Router()
     private var isRefreshing = false
+    private var lock = NSLock()
     private var requestsToRetry: [SimpleCallback] = []
     
     func response<T: Codable>(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<[T]>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
@@ -86,6 +87,8 @@ class NetworkManager {
     // This method is called when httpCode = 401, it should be called for all codes
     private func checkSpecificErrorStates(request: HTTPRequest, wrappedRequest: @escaping SimpleCallback, onError: @escaping APIErrorCallback) {
     
+        lock.lock() ; defer { lock.unlock() }
+        
         //Request.Login -> Replace with Request.RenewToken
         guard !(request is Request.Login) else {
             self.requestsToRetry.append(wrappedRequest)
@@ -97,14 +100,16 @@ class NetworkManager {
         
             // Instead of the Request.Login -> Replace with Request.RenewToken, check if RenewToken call should only be here??
             NetworkManager().response(with: Request.Login(userName: "user", password: "pass"), onSuccess: { [weak self] (response: Response.Authentication) in
-                wrappedRequest()
+                
+                self?.lock.lock() ; defer { self?.lock.unlock() }
                 
                 // Saves token in... the authentication logic needs to be rethinked because it is not being used at the moment
                 self?.router.authentication = response
                 
+                wrappedRequest()
+                
                 self?.requestsToRetry.forEach { $0() }
                 self?.requestsToRetry.removeAll()
-                
             }, onError: { (error) in
                 onError(error)
             }) {}
